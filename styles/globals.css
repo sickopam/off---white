@@ -18,6 +18,10 @@ html {
   font-weight: normal;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 button {
   content: '';
   height: 2rem;

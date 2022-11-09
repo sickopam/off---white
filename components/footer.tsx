@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image';
 
 export default function footer() {
     const [state, setState] = useState({
@@ -47,18 +48,16 @@ export default function footer() {
                     </select>
                 </div>
 
-                <div className='relative'>
-                    <div className='flex flex-row space-x-5'>
-                        <div onClick={() => {setCheck(!check)}} className='space-x-2'>
-                            <input type='checkbox' checked={check} readOnly
-                            className='appearance-none  checked:bg-black'/>
-                            <label className='text-sm'>Womenswear</label>
-                        </div>
-                        <div onClick={() => {setCheck(!check)}} className='space-x-2 relative self-center'>
-                            <input type='checkbox' checked={!check} readOnly
-                            className='appearance-none checked:bg-black'/>
-                            <label className='text-sm'>Menswear</label>
-                        </div>
+                <div className='flex flex-row space-x-5'>
+                    <div onClick={() => {setCheck(!check)}} className='space-x-2 inline-flex'>
+                        <input type='checkbox' checked={check} readOnly
+                        className='appearance-none  checked:bg-black'/>
+                        <h1 className='text-sm cursor-pointer'>Womenswear</h1>
+                    </div>
+                    <div onClick={() => {setCheck(!check)}} className='space-x-2 inline-flex'>
+                        <input type='checkbox' checked={!check} readOnly
+                        className='appearance-none checked:bg-black'/>
+                        <h1 className='text-sm cursor-pointer'>Menswear</h1>
                     </div>
                 </div>
 
@@ -74,7 +73,7 @@ export default function footer() {
             <h1 className='text-sm pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
         </div>
 
-      <div className='w-[65%] text-sm'>
+      <div className='w-[68%] text-sm'>
             <div className='uppercase w-[90%]'>
                 <div className='flex flex-row w-full justify-between'>
                     {foot.map((items, i) => (
@@ -82,11 +81,28 @@ export default function footer() {
                             <h1 className='font-semibold'>{items.title}</h1>
                             <div className='flex flex-col space-y-3'>
                                 {items.list.map((i) => (
-                                    <a key={i} href='/' className='hover:underline'>{i}</a>
+                                    <a key={i} href='/'>{i}</a>
                                 ))}
                             </div>
                         </div>
                     ))}
+                    <div className='space-y-5'>
+                        <h1 className='font-bold'>find us</h1>
+                        <div className='space-y-3'>
+                            <a>store locator</a>
+                            <div className='pt-7 space-y-4'>
+                                <h2 className='font-bold'>follow off-white</h2>
+                                <div className='flex flex-col space-y-3'>
+                                    <a href='/'>instagram</a>
+                                    <a href='/'>vimeo</a>
+                                </div>
+                                <h1 className='py-4 font-bold'>OFF-WHITE™ IOS APP</h1>
+                                <a href='/'>
+                                    <Image src='/img/apple.png' alt='download' width='140' height='10'></Image>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div/>
             </div>
@@ -106,11 +122,11 @@ const foot = [
         title: 'legal',
         list: ['terms & conditions', 'accessibility', 'privact & cookie policy', 'cookie preferences', 'regulatory framework']
     },
-    {
-        id: 3,
-        title: 'find us',
-        list: ['store locator', 'follow off-white', 'instagram', 'vimeo', 'off-white ios app']
-    }
+    // {
+    //     id: 3,
+    //     title: 'find us',
+    //     list: ['store locator', 'follow off-white', 'instagram', 'vimeo', 'off-white ios app']
+    // }
 ]
 
 const countries = [
