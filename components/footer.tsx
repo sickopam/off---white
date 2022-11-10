@@ -28,41 +28,42 @@ export default function footer() {
         getCN();
         }, []);
 
-        const [check, setCheck] = useState<any>(null)
+        const [check, setCheck] = useState<any>('Womenswear')
         
   return (
     <div className='w-[95%] pb-5 flex justify-between'>
-        <div className='w-[25%]'>
-            <div className='space-y-5'>
-                <h1 className='uppercase text-sm font-bold'>newsletter sign up</h1>
-                <p className='text-sm text-justify'>Sign up to our newsletter to receive information regarding exclusive collection previews, special events, and seasonal sale offers.</p>
-                <input type='email' placeholder='EMAIL ADDRESS' className='w-full select-' required/>
+        <div className='w-[25%] text-3xs'>
+            <div className='w-[100%] space-y-4'>
+                <h1 className='uppercase font-Mono text-xs'>newsletter sign up</h1>
+                <p className='text-justify'>Sign up to our newsletter to receive information regarding exclusive collection previews, special events, and seasonal sale offers.</p>
+                <input type='email' placeholder='EMAIL ADDRESS' className='w-full' required/>
                 <div>
-                    <h1 className='uppercase text-xs'>country</h1>
-                    <select>
+                    <h1 className='uppercase text-[#636c72]'>country</h1>
+                    <select className='text-sm'>
                         <option value='init'>{state.countryName}</option>
                         {countries.map((item, i) => (
                             item.name !== state.countryName &&
                             <option key={i}>{item.name}</option>
                         ))}
                     </select>
+                    
                 </div>
 
-                <div className='flex flex-row space-x-5'>
-                    <div onClick={() => {setCheck(!check)}} className='space-x-2 inline-flex'>
-                        <input type='checkbox' checked={check} readOnly
+                <div className='flex flex-row space-x-7 text-3xs'>
+                    <div onClick={() => {setCheck('Womenswear')}} className='space-x-2 inline-flex'>
+                        <input type='checkbox' checked={check === 'Womenswear'} readOnly
                         className='appearance-none  checked:bg-black'/>
-                        <h1 className='text-sm cursor-pointer'>Womenswear</h1>
+                        <h1 className='cursor-pointer'>Womenswear</h1>
                     </div>
-                    <div onClick={() => {setCheck(!check)}} className='space-x-2 inline-flex'>
-                        <input type='checkbox' checked={!check} readOnly
+                    <div onClick={() => {setCheck('Menswear')}} className='space-x-2 inline-flex'>
+                        <input type='checkbox' checked={check === 'Menswear'} readOnly
                         className='appearance-none checked:bg-black'/>
-                        <h1 className='text-sm cursor-pointer'>Menswear</h1>
+                        <h1 className='cursor-pointer'>Menswear</h1>
                     </div>
                 </div>
 
                 <div>
-                    <p className='text-sm tracking-wide'>By registering you agree to accept the <a href='/' className='underline hover:no-underline'>Terms & Conditions</a> and have read the <a href='/' className='underline hover:no-underline'>Privacy Policy.</a> </p>
+                    <p className='tracking-wide'>By registering you agree to accept the <a href='/' className='underline hover:no-underline'>Terms & Conditions</a> and have read the <a href='/' className='underline hover:no-underline'>Privacy Policy.</a> </p>
                 </div>
 
                 <button id='sub'>
@@ -70,33 +71,35 @@ export default function footer() {
                 </button>
 
             </div>
-            <h1 className='text-sm pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
+            <div className='w-[150%]'>
+                <h1 className='text-4xs pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
+            </div>
         </div>
 
-      <div className='w-[68%] text-sm'>
+      <div className='w-[68%] h-fit text-sm'>
             <div className='uppercase w-[90%]'>
                 <div className='flex flex-row w-full justify-between'>
                     {foot.map((items, i) => (
-                        <div key={i} className='space-y-5'>
-                            <h1 className='font-semibold'>{items.title}</h1>
-                            <div className='flex flex-col space-y-3'>
+                        <div key={i} className='space-y-4 text-xs'>
+                            <h1 className='font-Mono'>{items.title}</h1>
+                            <div className='flex flex-col space-y-2'>
                                 {items.list.map((i) => (
                                     <a key={i} href='/'>{i}</a>
                                 ))}
                             </div>
                         </div>
                     ))}
-                    <div className='space-y-5'>
-                        <h1 className='font-bold'>find us</h1>
+                    <div className='space-y-5 text-xs'>
+                        <h1 className='font-Mono'>find us</h1>
                         <div className='space-y-3'>
                             <a>store locator</a>
                             <div className='pt-7 space-y-4'>
-                                <h2 className='font-bold'>follow off-white</h2>
+                                <h2 className='font-Mono'>follow off-white</h2>
                                 <div className='flex flex-col space-y-3'>
                                     <a href='/'>instagram</a>
                                     <a href='/'>vimeo</a>
                                 </div>
-                                <h1 className='py-4 font-bold'>OFF-WHITE™ IOS APP</h1>
+                                <h1 className='py-4 font-Mono'>OFF-WHITE™ IOS APP</h1>
                                 <a href='/'>
                                     <Image src='/img/apple.png' alt='download' width='140' height='10'></Image>
                                 </a>

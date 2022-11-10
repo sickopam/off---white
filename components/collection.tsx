@@ -9,8 +9,8 @@ import Glam2 from '.././public/img/glam2.webp'
 
 const shoes = [
   {id: 1, image: 'img/shoe1.webp', desc: 'Out Of Office Calf Leather' },
-  {id: 2, image: 'img/shoe2.webp', desc: 'Low Vulcanized Sneakers' },
-  {id: 3, image: 'img/shoe3.webp', desc: 'Low Vulcanized Sneakers' },
+  {id: 2, image: 'img/shoe2.webp', desc: 'Low Vulcanized' },
+  {id: 3, image: 'img/shoe3.webp', desc: 'Low Vulcanized' },
   {id: 4, image: 'img/shoe4.webp', desc: 'Out Of Office Calf Leather' },
   {id: 5, image: 'img/shoe5.webp', desc: 'Out Of Office Calf Leather' },
   {id: 6, image: 'img/shoe6.webp', desc: 'Out Of Office Calf Leather' }
@@ -20,23 +20,23 @@ export default function collection() {
   return (
     <>
       <div className='mb-32'>
-        <div className='flex justify-between pb-2 uppercase'>
-          <p className='text-xs'>shop the "bling" menswear collection</p>
-          <h2 className='text-sm'>[1]</h2>
+        <div className='flex justify-between pb-2 uppercase text-3xs'>
+          <p className=''>shop the "bling" menswear collection</p>
+          <h2 className=''>[1]</h2>
         </div>
         <Image src={Men} alt='mens collection'></Image>
-        <div className='flex justify-between text-2xl'>
+        <div className='flex justify-between text-2xl font-Bookish'>
           <h1>1</h1>
           <h2>Shop The "Bling" Menswear Collection</h2>
         </div>
       </div>
 
       <div className='w-[80%] mb-52'>
-        <div className='flex justify-between uppercase pb-2'>
-          <p className='text-xs'>the "glam" collection</p>
-          <h2 className='text-sm'>[2]</h2>
+        <div className='flex justify-between uppercase pb-2 text-3xs'>
+          <p>the "glam" collection</p>
+          <h2>[2]</h2>
         </div>
-        <div className='flex flex-row space-x-5'>
+        <div className='flex flex-row space-x-5  font-Bookish'>
           <div className='w-[62%]'>
             <Image src={Glam} alt='glam'></Image>
             <div className='flex justify-between text-2xl'>
@@ -62,12 +62,12 @@ export default function collection() {
       </div>
 
       <div className='w-[75%]'>
-        <div className='flex justify-between uppercase pb-2'>
-          <h1 className='text-xs'>our picks for you</h1>
-          <h2 className='text-sm'>[6]</h2>
+        <div className='flex justify-between uppercase pb-2 text-3xs'>
+          <h1>our picks for you</h1>
+          <h2>[6]</h2>
         </div>
 
-        <div className='flex flex-row space-x-5 mb-44'>
+        <div className='flex flex-row space-x-5 mb-44 font-Bookish'>
           {shoes.map((items, i) => (
             <div key={i} className='flex flex-row'>
               <div>

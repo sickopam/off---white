@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
 @font-face {
   font-family: 'Bookish';
   src: url('../Bookish-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../IBMPlexMono.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url('../IBMPlexMono-Medium.woff') format('woff');
 }
 
 /* @font-face {
@@ -13,9 +25,10 @@
 } */
 
 html {
-  font-family: 'Bookish';
+  font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: normal;
+  overflow-x: hidden;
 }
 
 a:hover {
@@ -73,8 +86,12 @@ input:focus {
   outline: none;
 }
 
+input::placeholder {
+  color: #636c72;
+}
+
 option {
-  padding: 8px 0;
+  /* padding: 8px 8px; */
   border-bottom: 1.3px solid;
 }
 
