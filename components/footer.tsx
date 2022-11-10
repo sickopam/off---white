@@ -52,12 +52,12 @@ export default function footer() {
                 <div className='flex flex-row space-x-7 text-3xs'>
                     <div onClick={() => {setCheck('Womenswear')}} className='space-x-2 inline-flex'>
                         <input type='checkbox' checked={check === 'Womenswear'} readOnly
-                        className='appearance-none  checked:bg-black'/>
+                        className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
                         <h1 className='cursor-pointer'>Womenswear</h1>
                     </div>
                     <div onClick={() => {setCheck('Menswear')}} className='space-x-2 inline-flex'>
                         <input type='checkbox' checked={check === 'Menswear'} readOnly
-                        className='appearance-none checked:bg-black'/>
+                        className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
                         <h1 className='cursor-pointer'>Menswear</h1>
                     </div>
                 </div>
