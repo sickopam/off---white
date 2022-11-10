@@ -27,20 +27,43 @@
 html {
   font-family: 'IBM Plex Mono';
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   overflow-x: hidden;
 }
 
 a:hover {
   text-decoration: underline;
 }
-
-button {
+.sub {
   content: '';
   height: 2rem;
   width: 6rem;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
+}
+
+.sub:hover {
+  background-color: rgba(10, 0, 0, 0.55);
+}
+
+.current {
+  height: 2rem;
+  width: 9rem;
+  /* padding: 5px 5px; */
+  border-radius: 5px;
+  background-color: rgba(205,237,211,0.5);
+}
+
+.country {
+  padding: 0 1rem;
+  height: 2rem;
+  width: fit-content;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
+.country:hover {
+  background-color: rgba(10, 0, 0, 0.4);
 }
 
 div::selection {
@@ -67,7 +90,7 @@ input[type='email'] {
 } */
 
 input[type='checkbox'] {
-  position: relative;
+  /* position: relative; */
   width: 1rem;
   height: 1rem;
   padding: 0 0;
@@ -76,6 +99,13 @@ input[type='checkbox'] {
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid;
+}
+
+input[type='text'] {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 9px;
+  padding: 0 15px;
 }
 
 label {
@@ -114,3 +144,19 @@ ul li:hover {
   background-color: rgba(198, 185, 147, 0.5);
   text-decoration: underline;
 }
+
+.glass {
+  /* From https://css.glass */
+  @apply border-y-[15px] border-transparent;
+  position: fixed;
+  top: 4.5rem;
+  left: 1.3rem;
+  height: 82vh;
+  width: 45.5vh;
+  background: rgba(193, 184, 184, 0.18);
+  border-radius: 7px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+

@@ -2,9 +2,13 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import { CiSearch, CiHeart } from 'react-icons/ci'
 import { BsBag } from 'react-icons/bs'
+import { HiXMark } from 'react-icons/hi2' 
 
 import { useEffect, useState } from 'react'
 import Collection from './collection'
+// import Footer from './footer'
+import { countries } from './footer'
+
 
 
 export default function Home() {
@@ -32,13 +36,72 @@ export default function Home() {
     getCN();
   }, []);
 
+  const [show, setShow] = useState(false)
+  const toggle = () => setShow(!show)
+
+  // const[selected, setSelected] = useState(undefined)
+  // const buttonHandler = (e, id, i) => {
+  //     e.currentTarget.classList.toggle('active')
+  //     if (id !== selected) {
+  //       const button = document.querySelectorAll('.faq-button')
+  //       button.forEach((btn, index) => {
+  //         if (index !== i) {
+  //           btn.classList.remove('active');
+  //         }
+  //       });
+  //       setSelected(id);
+  //     } else {
+  //       const button = document.querySelectorAll('.faq-button')
+  //       button.forEach((btn) => {
+  //         btn.classList.remove('active')
+  //       });
+  //       setSelected(undefined)
+  //     }
+  //   }
+
+
   return (
     <div id='header' className='px-[1.3rem] w-full'>
-      <div className='py-[1.7rem] sticky top-0 bg-white'>
-        <div className='flex justify-between text-3xs relative self-center'>
+      <div className='pt-[1.5rem] pb-[0.5rem] sticky top-0 bg-white'>
+        <div className='flex justify-between text-2xs relative self-center'>
+
+          {show && (
+            <div className='glass overflow-y-scroll px-4'>
+              <div className='flex justify-between pb-9 uppercase'>
+                <h1>delivery destination</h1>
+                <button onClick={toggle}>
+                  <HiXMark size={20}/>
+                </button>
+              </div>
+
+              <div className='space-y-2'>
+                <h1 className='uppercase'>current location</h1>
+                <button className='uppercase current'>{state.countryName + ' / USD $'}</button>
+                <h2 className='text-3xs w-[90%] pt-2'>You are currently shipping to <a>{state.countryName}</a> and your order will be billed in USD $.</h2>
+              </div>
+
+              <div className='pt-9'>
+                <input type='text' placeholder='ENTER A NEW LOCATION'/>
+              </div>
+
+              <div className='uppercase pt-8 pb-4'>
+                <div className='flex justify-between'>
+                  <h1>all countries and regions</h1>
+                  <h2>[225]</h2>
+                </div>
+                <div className='flex-wrap space-y-2'>
+                  {countries.map((items, i) => (
+                      <button className='country uppercase mr-2'>{items.name + ' / USD $'}</button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          )}
+
           <div className='inline-flex space-x-7'>
             <div className='flex flex-row space-x-2'>
-              <h1 className='hover:underline whitespace-pre-wrap grid items-center'>{state.countryName + '  $'}</h1>
+              <button onClick={toggle} className='hover:underline grid items-center'>{state.countryName + '  $'}</button>
               <h1 className='grid items-center'>/</h1>
               <a className='hover:underline grid items-center'>EN</a>
             </div>
@@ -58,10 +121,10 @@ export default function Home() {
 
         </div>
 
-        <div className='flex justify-center pt-10'>
+        <div className='flex justify-center pt-8'>
           <ul className='uppercase text-xs'>
               {nav.map((items, i) => (
-                <div key={i} className='flex flex-row space-x-2'>
+                <div key={i} className='flex flex-row space-x-3'>
                   {items.li.map((li) => (
                     <li className='cursor-pointer' key={li}>{li}</li>
                   ))}
