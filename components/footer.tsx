@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import styles from '../styles/Home.module.css'
 import Image from 'next/image';
 
 export default function footer() {
@@ -29,6 +28,7 @@ export default function footer() {
         }, []);
 
         const [check, setCheck] = useState<any>('Womenswear')
+
         
   return (
     <div className='w-[95%] pb-5 flex justify-between'>
@@ -36,40 +36,43 @@ export default function footer() {
             <div className='w-[100%] space-y-4'>
                 <h1 className='uppercase font-Mono text-xs'>newsletter sign up</h1>
                 <p className='text-justify'>Sign up to our newsletter to receive information regarding exclusive collection previews, special events, and seasonal sale offers.</p>
-                <input type='email' placeholder='EMAIL ADDRESS' className='w-full' required/>
-                <div>
-                    <h1 className='uppercase text-[#636c72]'>country</h1>
-                    <select className='text-sm'>
-                        <option value='init'>{state.countryName}</option>
-                        {countries.map((item, i) => (
-                            item.name !== state.countryName &&
-                            <option key={i}>{item.name}</option>
-                        ))}
-                    </select>
-                    
-                </div>
-
-                <div className='flex flex-row space-x-7 text-3xs'>
-                    <div onClick={() => {setCheck('Womenswear')}} className='space-x-2 inline-flex'>
-                        <input type='checkbox' checked={check === 'Womenswear'} readOnly
-                        className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
-                        <h1 className='cursor-pointer'>Womenswear</h1>
+                <form className='space-y-5'>
+                    <div>
+                        <input type='email' placeholder='EMAIL ADDRESS' className='w-full' required/>
+                        <p className='invisible peer-invalid:visible text-red-500'>hi</p>
+                        <div>
+                            <h1 className='uppercase text-[#636c72]'>country</h1>
+                            <select className='text-sm'>
+                                <option value='init'>{state.countryName}</option>
+                                {countries.map((item, i) => (
+                                    item.name !== state.countryName &&
+                                    <option key={i}>{item.name}</option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
-                    <div onClick={() => {setCheck('Menswear')}} className='space-x-2 inline-flex'>
-                        <input type='checkbox' checked={check === 'Menswear'} readOnly
-                        className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
-                        <h1 className='cursor-pointer'>Menswear</h1>
+
+                    <div className='flex flex-row space-x-7 text-3xs'>
+                        <div onClick={() => {setCheck('Womenswear')}} className='space-x-2 inline-flex'>
+                            <input type='checkbox' checked={check === 'Womenswear'} readOnly
+                            className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
+                            <h1 className='cursor-pointer'>Womenswear</h1>
+                        </div>
+                        <div onClick={() => {setCheck('Menswear')}} className='space-x-2 inline-flex'>
+                            <input type='checkbox' checked={check === 'Menswear'} readOnly
+                            className='appearance-none checked:bg-black checked:ring-2 checked:ring-inset checked:ring-white'/>
+                            <h1 className='cursor-pointer'>Menswear</h1>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <p className='tracking-wide'>By registering you agree to accept the <a href='/' className='underline hover:no-underline'>Terms & Conditions</a> and have read the <a href='/' className='underline hover:no-underline'>Privacy Policy.</a> </p>
-                </div>
+                    <div>
+                        <p className='tracking-wide'>By registering you agree to accept the <a href='/' className='underline hover:no-underline'>Terms & Conditions</a> and have read the <a href='/' className='underline hover:no-underline'>Privacy Policy.</a> </p>
+                    </div>
 
-                <button className='sub'>
-                    <h1 className='text-xs font-bold text-white'>SUBSCRIBE</h1>
-                </button>
-
+                    <button className='sub'>
+                        <h1 className='text-xs font-bold text-white'>SUBSCRIBE</h1>
+                    </button>
+                </form>
             </div>
             <div className='w-[150%]'>
                 <h1 className='text-4xs pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>

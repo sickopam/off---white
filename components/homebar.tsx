@@ -6,7 +6,6 @@ import { HiXMark } from 'react-icons/hi2'
 
 import { useEffect, useState } from 'react'
 import Collection from './collection'
-// import Footer from './footer'
 import { countries } from './footer'
 
 
@@ -36,8 +35,10 @@ export default function Home() {
     getCN();
   }, []);
 
-  const [show, setShow] = useState(false)
-  const toggle = () => setShow(!show)
+  const [show, setShow] = useState<any>(false)
+  const toggle = () => setShow(true)
+  const toggleX = () => setShow(false)
+
 
   // const[selected, setSelected] = useState(undefined)
   // const buttonHandler = (e, id, i) => {
@@ -59,7 +60,6 @@ export default function Home() {
   //     }
   //   }
 
-
   return (
     <div id='header' className='px-[1.3rem] w-full'>
       <div className='pt-[1.5rem] pb-[0.5rem] sticky top-0 bg-white'>
@@ -69,7 +69,7 @@ export default function Home() {
             <div className='glass overflow-y-scroll px-4'>
               <div className='flex justify-between pb-9 uppercase'>
                 <h1>delivery destination</h1>
-                <button onClick={toggle}>
+                <button onClick={toggleX}>
                   <HiXMark size={20}/>
                 </button>
               </div>
@@ -91,12 +91,11 @@ export default function Home() {
                 </div>
                 <div className='flex-wrap space-y-2'>
                   {countries.map((items, i) => (
-                      <button className='country uppercase mr-2'>{items.name + ' / USD $'}</button>
+                    <button className='country uppercase mr-2'>{items.name + ' / USD $'}</button>
                   ))}
                 </div>
               </div>
             </div>
-
           )}
 
           <div className='inline-flex space-x-7'>
@@ -143,3 +142,5 @@ const nav = [
     li: ['gifts', 'man', 'woman', 'kids', 'icons', 'eyewear', 'homeware', 'special items', 'brand']
   }
 ]
+
+
