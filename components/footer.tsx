@@ -28,21 +28,20 @@ export default function footer() {
         }, []);
 
         const [check, setCheck] = useState<any>('Womenswear')
-
         
   return (
-    <div className='w-[95%] pb-5 flex justify-between'>
-        <div className='w-[25%] text-3xs'>
+    <div className='w-full lg:w-[95%] pb-5 flex flex-col lg:flex-row lg:justify-between'>
+        <div className='w-full md:w-[90%] lg:w-[25%] px-[1rem] lg:px-[1.3rem] text-4xs lg:text-3xs'>
             <div className='w-[100%] space-y-4'>
                 <h1 className='uppercase font-Mono text-xs'>newsletter sign up</h1>
                 <p className='text-justify'>Sign up to our newsletter to receive information regarding exclusive collection previews, special events, and seasonal sale offers.</p>
                 <form className='space-y-5'>
                     <div>
-                        <input type='email' placeholder='EMAIL ADDRESS' className='w-full' required/>
+                        <input type='email' placeholder='EMAIL ADDRESS' className='w-[35%] lg:w-full' required/>
                         <p className='invisible peer-invalid:visible text-red-500'>hi</p>
-                        <div>
+                        <div className='w-[35%] lg:w-full'>
                             <h1 className='uppercase text-[#636c72]'>country</h1>
-                            <select className='text-sm'>
+                            <select className='text-2xs lg:text-sm'>
                                 <option value='init'>{state.countryName}</option>
                                 {countries.map((item, i) => (
                                     item.name !== state.countryName &&
@@ -65,7 +64,7 @@ export default function footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className='text-5xs lg:text-4xs'>
                         <p className='tracking-wide'>By registering you agree to accept the <a href='/' className='underline hover:no-underline'>Terms & Conditions</a> and have read the <a href='/' className='underline hover:no-underline'>Privacy Policy.</a> </p>
                     </div>
 
@@ -74,25 +73,26 @@ export default function footer() {
                     </button>
                 </form>
             </div>
-            <div className='w-[150%]'>
+            <div className='hidden lg:block w-[150%]'>
                 <h1 className='text-4xs pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
             </div>
         </div>
 
-      <div className='w-[68%] h-fit text-sm'>
-            <div className='uppercase w-[90%]'>
-                <div className='flex flex-row w-full justify-between'>
+      <div className='w-full lg:w-[68%] h-fit pt-12 lg:pt-0 text-sm'>
+            <div className='uppercase w-full lg:w-[90%]'>
+                <div className='block lg:hidden border-[0.5px] mb-4'/>
+                <div className='flex flex-col lg:flex-row space-y-4 lg:space-y-0 justify-between'>
                     {foot.map((items, i) => (
                         <div key={i} className='space-y-4 text-xs'>
-                            <h1 className='font-Mono'>{items.title}</h1>
-                            <div className='flex flex-col space-y-2'>
+                            <h1 className='font-Mono px-[1rem] lg:px-[1.3rem]'>{items.title}</h1>
+                            <div className='flex flex-col space-y-2 footer lg:bg-transparent p-3 lg:p-0 px-[1rem] lg:px-[1.3rem]'>
                                 {items.list.map((i) => (
-                                    <a key={i} href='/'>{i}</a>
+                                    <a className='w-fit text-2xs lg:text-sm pl-3 lg:pl-0' key={i} href='/'>{i}</a>
                                 ))}
                             </div>
                         </div>
                     ))}
-                    <div className='space-y-5 text-xs'>
+                    <div className='space-y-5 text-xs px-[1rem] lg:px-[1.3rem]'>
                         <h1 className='font-Mono'>find us</h1>
                         <div className='space-y-3'>
                             <a>store locator</a>
@@ -113,6 +113,9 @@ export default function footer() {
             <div/>
         </div>
       </div>
+      <div className='block lg:hidden w-[150%] px-[1rem] lg:px-[1.3rem]'>
+                <h1 className='text-4xs pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
+        </div>
     </div>
   )
 }

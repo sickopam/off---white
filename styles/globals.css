@@ -34,6 +34,7 @@ html {
 a:hover {
   text-decoration: underline;
 }
+
 .sub {
   content: '';
   height: 2rem;
@@ -74,6 +75,11 @@ h1::selection, h2::selection, a::selection, p::selection,
 button::selection, li::selection, td::selection, img::selection,
 option::selection, label::selection, iframe::selection {
   background: rgba(205,237,211,0.5);
+}
+
+.footer {
+  height: 100%;
+  background-color: rgb(243 244 246);
 }
 
 option::selection {
@@ -145,6 +151,10 @@ ul li:hover {
   text-decoration: underline;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .glass {
   /* From https://css.glass */
   @apply border-y-[15px] border-transparent;
@@ -158,5 +168,15 @@ ul li:hover {
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
+}
+
+.drop {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  /* opacity: 0.5; */
 }
 
