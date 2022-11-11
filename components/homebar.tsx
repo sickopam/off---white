@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           {bar && (
-            <div className='drop pt-3 lg:pt-0 text-sm'>
+            <div className='block lg:hidden drop pt-3 lg:pt-0 text-sm'>
               {nav.map((items, i) => (
                 <div key={i} className='flex flex-col uppercase'>
                   {items.li.map((li) => (
