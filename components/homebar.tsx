@@ -71,32 +71,33 @@ export default function Home() {
 
           {show && (
             <div className='glass overflow-y-scroll px-4'>
-              <div className='flex justify-between pb-9 uppercase'>
+              <div className='flex justify-between sticky top-0 uppercase'>
                 <h1>delivery destination</h1>
-                <button onClick={toggleX}>
+                <button className='grid items-start' onClick={toggleX}>
                   <HiXMark size={20}/>
                 </button>
               </div>
-
-              <div className='space-y-2'>
-                <h1 className='uppercase'>current location</h1>
-                <button className='uppercase current'>{state.countryName + ' / USD $'}</button>
-                <h2 className='text-3xs w-[90%] pt-2'>You are currently shipping to <a>{state.countryName}</a> and your order will be billed in USD $.</h2>
-              </div>
-
-              <div className='pt-9'>
-                <input type='text' placeholder='ENTER A NEW LOCATION'/>
-              </div>
-
-              <div className='uppercase pt-8 pb-4'>
-                <div className='flex justify-between'>
-                  <h1>all countries and regions</h1>
-                  <h2>[225]</h2>
+              <div className='border-t-[2.25rem] border-transparent h-fit'>
+                <div className='space-y-2'>
+                  <h1 className='uppercase'>current location</h1>
+                  <button className='uppercase current'>{state.countryName + ' / USD $'}</button>
+                  <h2 className='text-3xs w-[90%] pt-2'>You are currently shipping to <a>{state.countryName}</a> and your order will be billed in USD $.</h2>
                 </div>
-                <div className='flex-wrap space-y-2'>
-                  {countries.map((items, i) => (
-                    <button className='country uppercase mr-2'>{items.name + ' / USD $'}</button>
-                  ))}
+
+                <div className='pt-9'>
+                  <input type='text' placeholder='ENTER A NEW LOCATION'/>
+                </div>
+
+                <div className='uppercase pt-8 pb-4'>
+                  <div className='flex justify-between'>
+                    <h1>all countries and regions</h1>
+                    <h2>[225]</h2>
+                  </div>
+                  <div className='flex-wrap space-y-2'>
+                    {countries.map((items, i) => (
+                      <button className='country uppercase mr-2'>{items.name + ' / USD $'}</button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

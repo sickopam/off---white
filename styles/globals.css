@@ -27,7 +27,7 @@
 html {
   font-family: 'IBM Plex Mono';
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   overflow-x: hidden;
 }
 
@@ -132,6 +132,10 @@ option {
 }
 
 select {
+  background: url('../public/img/chevron-down.svg') no-repeat 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
   width: 100%;
   padding: 8px 0;
   border-bottom: 1.3px solid;
@@ -171,12 +175,14 @@ ul li:hover {
 }
 
 .drop {
+  height: fit-content;
   position: fixed;
   top: 3rem;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: #fff;
+  overflow-y: scroll;
   /* opacity: 0.5; */
 }
 

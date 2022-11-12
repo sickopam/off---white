@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Image from 'next/image';
+import { BsChevronDown } from 'react-icons/bs'
 
 export default function footer() {
     const [state, setState] = useState({
@@ -41,13 +42,16 @@ export default function footer() {
                         <p className='invisible peer-invalid:visible text-red-500'>hi</p>
                         <div className='w-[35%] lg:w-full'>
                             <h1 className='uppercase text-[#636c72]'>country</h1>
-                            <select className='text-2xs lg:text-sm'>
-                                <option value='init'>{state.countryName}</option>
-                                {countries.map((item, i) => (
-                                    item.name !== state.countryName &&
-                                    <option key={i}>{item.name}</option>
-                                ))}
-                            </select>
+                            <div className='flex justify-between'>
+                                <select className='text-2xs lg:text-sm'>
+                                    <option value='init'>{state.countryName}</option>
+                                    {countries.map((item, i) => (
+                                        item.name !== state.countryName &&
+                                        <option key={i}>{item.name}</option>
+                                        ))}
+                                </select>
+                                {/* <BsChevronDown size={20}/> */}
+                            </div>
                         </div>
                     </div>
 
