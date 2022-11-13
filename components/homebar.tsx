@@ -6,6 +6,7 @@ import { HiXMark } from 'react-icons/hi2'
 import { AiOutlineEllipsis } from 'react-icons/ai'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Collection from './collection'
 import Footer from './footer'
 import { countries } from './footer'

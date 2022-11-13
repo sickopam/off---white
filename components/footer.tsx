@@ -38,9 +38,9 @@ export default function footer() {
                 <p className='text-justify'>Sign up to our newsletter to receive information regarding exclusive collection previews, special events, and seasonal sale offers.</p>
                 <form className='space-y-5'>
                     <div>
-                        <input type='email' placeholder='EMAIL ADDRESS' className='w-[35%] lg:w-full' required/>
+                        <input type='email' placeholder='EMAIL ADDRESS' className='w-full md:w-[35%] lg:w-full' required/>
                         <p className='invisible peer-invalid:visible text-red-500'>hi</p>
-                        <div className='w-[35%] lg:w-full'>
+                        <div className='w-full md:w-[35%] lg:w-full'>
                             <h1 className='uppercase text-[#636c72]'>country</h1>
                             <div className='flex justify-between'>
                                 <select className='text-2xs lg:text-sm'>
@@ -117,7 +117,7 @@ export default function footer() {
             <div/>
         </div>
       </div>
-      <div className='block lg:hidden w-[150%] px-[1rem] lg:px-[1.3rem]'>
+      <div className='block lg:hidden w-[90%] px-[1rem] lg:px-[1.3rem]'>
                 <h1 className='text-4xs pt-20'>© 2021 Off-White™. All rights reserved. <a href='/' className='underline hover:no-underline'>Privacy Policy.</a></h1>
         </div>
     </div>

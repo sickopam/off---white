@@ -87,6 +87,7 @@ option::selection {
 }
 
 input[type='email'] {
+  border-radius: 0;
   padding: 8px 0;
   border-bottom: 1.3px solid;
 }

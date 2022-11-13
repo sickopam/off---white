@@ -19,7 +19,7 @@ const shoes = [
 export default function collection() {
   return (
     <>
-    <div className='px-[1rem] lg:px-[1.3rem]'>
+    <div className='px-[1rem] lg:px-[1.3rem] pt-12 lg:pt-0'>
       <div className='mb-32'>
         <div className='flex justify-between pb-2 uppercase text-3xs'>
           <p className=''>shop the "bling" menswear collection</p>
